@@ -1,0 +1,10 @@
+How did event.preventDefault() help in handling form submission?
+    It helped because the normal form submission input triggers a page reload which is not what was wanted. Preventing the default behavior allowed us to instead show error messages if our custom validators were false before submitting the form.
+What is the difference between using HTML5 validation attributes and JavaScript-based validation? Why might you use both?
+    HTML5 validation can be used to prevent the usef from (easily) submitting a form unless the required validators are passed which can cover most cases but in the scenarios where a data might be sent by accident or through som way other than the html, checking those validators in js is also good.
+Explain how you used localStorage to persist and retrieve the username. What are the limitations of localStorage for storing sensitive data?
+    I used localstorage by saving the username submitted on succesful form submission and filling the username field with this value on page load.
+Describe a challenge you faced in implementing the real-time validation and how you solved it.
+    When clicking the submit button we wanted the form to check all the fields, however if we just put our validators in an if statement it would exit when the first one satisfied the condition. To make it so every field was checked, I initialized the check method I made for each field in an array so I could just check if all those values are true before submitting the form.
+How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?
+    I relied on the given error if it existed and showed my custom errors if needed after. I also ensure the custom error messages were descriptive and short.

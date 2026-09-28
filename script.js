@@ -41,23 +41,23 @@ registrationForm.addEventListener("submit", function (event) {
 });
 
 function validatePassword() {
-    passwordInput.setCustomValidity("")
-    if(!passwordInput.validity.valid){
-        return validateField(passwordInput)
-    }
-    console.log(passwordInput.value)
-    if (parseFloat(passwordInput.value) == passwordInput.value) {
-        passwordInput.setCustomValidity("Please add an uppercase and lowercase letter");
-    } else if (passwordInput.value === passwordInput.value.toLowerCase()) {
-        passwordInput.setCustomValidity("Please add a uppercase letter");
-    } else if (passwordInput.value === passwordInput.value.toUpperCase()){
-        passwordInput.setCustomValidity("Please add a lowercase letter");
-    } else if (!/\d/.test(passwordInput.value)){
-        passwordInput.setCustomValidity("Please add a number");
-    }
-    return validateField(passwordInput)
+  passwordInput.setCustomValidity("");
+  if (!passwordInput.validity.valid) {
+    return validateField(passwordInput);
+  }
+  if (parseFloat(passwordInput.value) == passwordInput.value) {
+    passwordInput.setCustomValidity(
+      "Please add an uppercase and lowercase letter",
+    );
+  } else if (passwordInput.value === passwordInput.value.toLowerCase()) {
+    passwordInput.setCustomValidity("Please add a uppercase letter");
+  } else if (passwordInput.value === passwordInput.value.toUpperCase()) {
+    passwordInput.setCustomValidity("Please add a lowercase letter");
+  } else if (!/\d/.test(passwordInput.value)) {
+    passwordInput.setCustomValidity("Please add a number");
+  }
+  return validateField(passwordInput);
 }
-
 
 function validateConfirmPassword() {
   if (passwordInput.value != confirmPasswordInput.value) {
